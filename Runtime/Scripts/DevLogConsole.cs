@@ -50,7 +50,7 @@ namespace AarquieSolutions.DevelopmentConsole
 		}
 	}
 
-	public static class DebugLogConsole
+	public static class DevLogConsole
 	{
 		public delegate bool ParseFunction( string input, out object output );
 
@@ -121,7 +121,7 @@ namespace AarquieSolutions.DevelopmentConsole
 		// CompareInfo used for case-insensitive command name comparison
 		private static readonly CompareInfo caseInsensitiveComparer = new CultureInfo( "en-US" ).CompareInfo;
 
-		static DebugLogConsole()
+		static DevLogConsole()
 		{
 			AddCommand( "help", "Prints all commands", LogAllCommands );
 			AddCommand<string>( "help", "Prints all matching commands", LogAllCommandsWithName );

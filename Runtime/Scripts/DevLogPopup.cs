@@ -6,7 +6,7 @@ using System.Collections;
 // Manager class for the debug popup
 namespace AarquieSolutions.DevelopmentConsole
 {
-	public class DebugLogPopup : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
+	public class DevLogPopup : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 	{
 		private RectTransform popupTransform;
 

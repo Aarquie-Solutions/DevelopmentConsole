@@ -257,7 +257,7 @@ namespace AarquieSolutions.DevelopmentConsole
 		private CanvasGroup logWindowCanvasGroup;
 
 		[SerializeField]
-		private DebugLogPopup popupManager;
+		private DevLogPopup popupManager;
 
 		[SerializeField]
 		private ScrollRect logItemsScrollRect;
@@ -266,7 +266,7 @@ namespace AarquieSolutions.DevelopmentConsole
 
 		// Recycled list view to handle the log items efficiently
 		[SerializeField]
-		private DebugLogRecycledListView recycledListView;
+		private DevLogRecycledListView recycledListView;
 #pragma warning restore 0649
 
 		private bool isLogWindowVisible = true;
@@ -512,8 +512,8 @@ namespace AarquieSolutions.DevelopmentConsole
 #endif
 			}
 
-			DebugLogConsole.AddCommand( "logs.save", "Saves logs to persistentDataPath", SaveLogsToFile );
-			DebugLogConsole.AddCommand<string>( "logs.save", "Saves logs to the specified file", SaveLogsToFile );
+			DevLogConsole.AddCommand( "logs.save", "Saves logs to persistentDataPath", SaveLogsToFile );
+			DevLogConsole.AddCommand<string>( "logs.save", "Saves logs to the specified file", SaveLogsToFile );
 
 #if ENABLE_INPUT_SYSTEM && !ENABLE_LEGACY_INPUT_MANAGER
 			if( toggleWithKey )
@@ -540,7 +540,7 @@ namespace AarquieSolutions.DevelopmentConsole
 				logcatListener.Stop();
 #endif
 
-			DebugLogConsole.RemoveCommand( "logs.save" );
+			DevLogConsole.RemoveCommand( "logs.save" );
 
 #if ENABLE_INPUT_SYSTEM && !ENABLE_LEGACY_INPUT_MANAGER
 			if( toggleBinding.enabled )
@@ -837,7 +837,7 @@ namespace AarquieSolutions.DevelopmentConsole
 					if( string.IsNullOrEmpty( commandInputFieldAutoCompleteBase ) )
 						commandInputFieldAutoCompleteBase = text;
 
-					string autoCompletedCommand = DebugLogConsole.GetAutoCompleteCommand( commandInputFieldAutoCompleteBase, text );
+					string autoCompletedCommand = DevLogConsole.GetAutoCompleteCommand( commandInputFieldAutoCompleteBase, text );
 					if( !string.IsNullOrEmpty( autoCompletedCommand ) && autoCompletedCommand != text )
 					{
 						commandInputFieldAutoCompletedNow = true;
@@ -862,7 +862,7 @@ namespace AarquieSolutions.DevelopmentConsole
 					unfinishedCommand = null;
 
 					// Execute the command
-					DebugLogConsole.ExecuteCommand( text );
+					DevLogConsole.ExecuteCommand( text );
 
 					// Snap to bottom and select the latest entry
 					SetSnapToBottom( true );
@@ -1172,7 +1172,7 @@ namespace AarquieSolutions.DevelopmentConsole
 
 				string prevCommandName = commandInputFieldPrevCommandName;
 				int numberOfParameters;
-				DebugLogConsole.GetCommandSuggestions( command, matchingCommandSuggestions, commandCaretIndexIncrements, ref commandInputFieldPrevCommandName, out numberOfParameters );
+				DevLogConsole.GetCommandSuggestions( command, matchingCommandSuggestions, commandCaretIndexIncrements, ref commandInputFieldPrevCommandName, out numberOfParameters );
 				if( prevCommandName != commandInputFieldPrevCommandName || numberOfParameters != commandInputFieldPrevParamCount )
 				{
 					commandInputFieldPrevParamCount = numberOfParameters;

@@ -1,7 +1,7 @@
 {
   "name": "com.aarquiesolutions.developmentconsole",
   "displayName": "Development Console",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "In game development console. Fork of InGameDebugConsole: https://github.com/yasirkula/UnityIngameDebugConsole.git",
   "hideInEditor": false
 }

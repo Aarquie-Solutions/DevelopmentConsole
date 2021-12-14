@@ -6,7 +6,7 @@ using UnityEngine.UI;
 // recycled within the list instead of creating a new log item at each chance
 namespace AarquieSolutions.DevelopmentConsole
 {
-	public class DebugLogRecycledListView : MonoBehaviour
+	public class DevLogRecycledListView : MonoBehaviour
 	{
 #pragma warning disable 0649
 		// Cached components

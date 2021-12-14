@@ -97,9 +97,9 @@ namespace AarquieSolutions.DevelopmentConsole
 		private Vector2 logTextOriginalSize;
 		private float copyLogButtonHeight;
 
-		private DebugLogRecycledListView listView;
+		private DevLogRecycledListView listView;
 
-		public void Initialize( DebugLogRecycledListView listView )
+		public void Initialize( DevLogRecycledListView listView )
 		{
 			this.listView = listView;
 
